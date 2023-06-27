@@ -1,0 +1,125 @@
+/* CSS HEX */
+/* --federal-blue: #031a6bff;
+--prussian-blue: #033860ff;
+--cerulean: #087ca7ff;
+--polynesian-blue: #004385ff;
+--aero: #05b2dcff; */
+
+/* global styles */
+img {
+    width: 300px;
+}
+
+body {
+    color:#031A6B;
+    margin: 0;
+    padding: 0px;
+    font-family: 'Josefin Sans', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a {
+    color: #F0F0F0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* p {
+    margin: 0px;
+} */
+
+/* ------------------- profile ------------------- */
+header {
+    background: #05b2dc;
+}
+
+h1  {
+    font-size: 8em;
+    text-align: center;
+    color: rgb(32, 95, 212);
+    line-height: 1;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h1, h2 {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 400;
+    margin: 0 auto;
+}
+
+header p {
+    font-size: 20px;
+}
+
+.content-wrap {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+/* ------------------- edecation ------------------- */
+.education {
+    color: #F0F0F0;
+    background: #004385;
+}
+
+/* ------------------- projects ------------------- */
+.projects {
+    background: #087CA7;
+    margin: 0;
+}
+
+.projects a {
+    background: darkblue;
+    color: #05b2dc;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.projects a:hover {
+    color: red;
+    background: orange;
+}
+
+.project-item {
+    overflow: hidden;
+    border-bottom: 1px dashed darkgray;
+    padding: 25px 0;
+}
+
+.project-item img {
+    float: left;
+    margin-right: 20px;
+}
+
+.project-item h3 {
+    margin-top: 0;
+}
+
+/* ------------------- work experience ------------------- */
+.work {
+    background: #05B2DC;
+    margin: 0;
+}
+
+footer {
+    color: #F0F0F0;
+    background: #033860;
+    margin: 0;
+}
