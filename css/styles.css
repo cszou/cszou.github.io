@@ -134,8 +134,8 @@ header p {
 }
 
 .projects a {
-    background: darkblue;
-    color: #05b2dc;
+    background: white;
+    color: #087CA7;
     padding: 8px;
     border-radius: 4px;
     text-decoration: none;
@@ -143,8 +143,8 @@ header p {
 }
 
 .projects a:hover {
-    color: red;
-    background: orange;
+    /* color: white; */
+    background: #031A6B;
 }
 
 .project-item {
