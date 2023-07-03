@@ -131,8 +131,8 @@ header p {
 /* ------------------- projects ------------------- */
 .projects {
     background: #087CA7;
+    /* background: black; */
     margin: 0;
-    color: white;
 }
 
 .projects a {
@@ -145,7 +145,6 @@ header p {
 }
 
 .projects a:hover {
-    /* color: white; */
     background: #033860;
 }
 

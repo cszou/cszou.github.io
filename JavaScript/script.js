@@ -1,5 +1,3 @@
-console.log("sucess!")
-
 const mySkills = [
     "Python",
     "C++",
