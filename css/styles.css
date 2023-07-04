@@ -131,7 +131,6 @@ header p {
 /* ------------------- projects ------------------- */
 .projects {
     background-color: #087CA7;
-    /* background: black; */
     margin: 0;
 }
 
@@ -144,9 +143,9 @@ header p {
     display: inline-block;
 } */
 
-.projects a:hover {
+/* .projects a:hover {
     background: #033860;
-}
+} */
 
 .project-item {
     overflow: hidden;
