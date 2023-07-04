@@ -130,19 +130,19 @@ header p {
 
 /* ------------------- projects ------------------- */
 .projects {
-    background: #087CA7;
+    background-color: #087CA7;
     /* background: black; */
     margin: 0;
 }
 
-.projects a {
+/* .projects a {
     background: #05B2DC;
     color: white;
     padding: 8px;
     border-radius: 4px;
     text-decoration: none;
     display: inline-block;
-}
+} */
 
 .projects a:hover {
     background: #033860;
