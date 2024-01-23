@@ -2,11 +2,13 @@ const mySkills = [
     "Python",
     "C++",
     "Java",
+    "C#",
     "HTML",
     "CSS",
     "JavaScript",
     "SQL",
     "Git",
+    "Jira",
 ];
 
 const skillDiv = document.createElement("div");
