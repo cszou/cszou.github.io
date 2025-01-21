@@ -31,7 +31,7 @@
         <!-- ******************    Skills ****************** -->
         <section class="skills">
         </section>
-
+        <div id="flat-chat"></div>
         <!-- ******************    EDUCATION & CERTIFICATIONS ****************** -->
         <section class="education">
             <div class="content-wrap">
@@ -39,7 +39,7 @@
                 <section>
                     <h3>Concordia University - Montreal</h3>
                     <p>M.C.S. in Computer Science | Sept 2023 - Present</p>
-                        <!-- <ul style="list-style-type: none; margin: 0; padding: 0 10px; font-size: 0.8em;">
+                    <!-- <ul style="list-style-type: none; margin: 0; padding: 0 10px; font-size: 0.8em;">
                             <li>Honour: Graduated with Great Distinction (GPA 4.1/4.3)</li>
                             <li>Honour: Top 1% Scholar-Faculty of Arts & Science (2021)</li>
                             <li>Honour: Dean's List (2021, 2022)</li>
@@ -49,12 +49,12 @@
                 <section>
                     <h3>Concordia University - Montreal</h3>
                     <p>BSc. in Math. and Stat. and Computer Science | Sept 2020 - May 2023</p>
-                        <ul style="list-style-type: none; margin: 0; padding: 0 10px; font-size: 0.8em;">
-                            <li>Honour: Graduated with Great Distinction (GPA 4.1/4.3)</li>
-                            <li>Honour: Top 1% Scholar-Faculty of Arts & Science (2021)</li>
-                            <li>Honour: Dean's List (2021, 2022)</li>
-                            <li>Scholarship: Concordia University 25th Anniversary Scholarship (2021)</li>
-                        </ul>
+                    <ul style="list-style-type: none; margin: 0; padding: 0 10px; font-size: 0.8em;">
+                        <li>Honour: Graduated with Great Distinction (GPA 4.1/4.3)</li>
+                        <li>Honour: Top 1% Scholar-Faculty of Arts & Science (2021)</li>
+                        <li>Honour: Dean's List (2021, 2022)</li>
+                        <li>Scholarship: Concordia University 25th Anniversary Scholarship (2021)</li>
+                    </ul>
                 </section>
                 <section>
                     <h3>Rosemount Technology Centre - Montreal</h3>
@@ -74,16 +74,16 @@
                 <section class="project-item">
                     <img src="img\warzone.jpg" alt="description of image">
                     <div class="project-description">
-                    <h3>Warzone Game</h3>
-                    <p>
-                    <ul>
-                        <li>Developed a command-line Risk style game “Warzone” using C++.</li>
-                        <li>Troubleshot group code for proper functioning.</li>
-                        <li>Managed GitHub repo for version control.</li>
-                    </ul>
-                    </p>
-                    <!-- <a href="https://github.com/cszou/warzone" target="_blank">View Project</a> -->
-                </div>
+                        <h3>Warzone Game</h3>
+                        <p>
+                        <ul>
+                            <li>Developed a command-line Risk style game “Warzone” using C++.</li>
+                            <li>Troubleshot group code for proper functioning.</li>
+                            <li>Managed GitHub repo for version control.</li>
+                        </ul>
+                        </p>
+                        <!-- <a href="https://github.com/cszou/warzone" target="_blank">View Project</a> -->
+                    </div>
                 </section>
                 <section class="project-item">
                     <img src="img\snake.jpg" alt="snake game">
@@ -102,16 +102,17 @@
                 <section class="project-item">
                     <img src="img/CNN.jpeg" alt="description of image">
                     <div class="project-description">
-                    <h3>Deep Learning from Limited Data</h3>
-                    <p>
-                    <ul>
-                        <li>Implemented and trained neural networks with limited data samples from CIFAR-10 in Python.
-                        </li>
-                        <li>Evaluated different training approaches from publication research.</li>
-                        <li>Summarized test results and generated project reports.</li>
-                    </ul>
-                    </p>
-                    <!-- <a href="#" target="_blank">View project / case study</a> -->
+                        <h3>Deep Learning from Limited Data</h3>
+                        <p>
+                        <ul>
+                            <li>Implemented and trained neural networks with limited data samples from CIFAR-10 in
+                                Python.
+                            </li>
+                            <li>Evaluated different training approaches from publication research.</li>
+                            <li>Summarized test results and generated project reports.</li>
+                        </ul>
+                        </p>
+                        <!-- <a href="#" target="_blank">View project / case study</a> -->
                     </div>
                 </section>
             </div>
@@ -177,26 +178,6 @@
             </div>
         </footer>
     </main>
-    <script type="text/javascript">
-      (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '6705524288001e9aa0e363b9' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-
-          // Optional configurations
-          render: {
-            mode: 'embedded',  // Embed webchat within a section of your page
-            target: document.getElementById('flat-chat')  // Target the element with id 'flat-chat'
-          },
-          autostart: false  // Set autostart to false to avoid automatic start
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
 </body>
 
 </html>

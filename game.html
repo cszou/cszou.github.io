@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cows and Bulls Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Let's Guess the Number</h1>
+        <form id="game-form">
+            <label for="guess-input">Enter 4 unique digits:</label><br>
+            <input type="text" id="guess-input" maxlength="4" autofocus><br>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="message"></p>
+        <h2>Guess History:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attempt</th>
+                    <th>Guess</th>
+                    <th>A</th>
+                    <th>B</th>
+                </tr>
+            </thead>
+            <tbody id="history"></tbody>
+        </table>
+        <h3>Rules:</h3>
+            <p>A means a correct digit in the correct position.</p>
+            <p>B means a correct digit in the wrong position.</p>
+    </div>
+
+    <script>
+        // Game state
+        let realNumber = generateNumber();
+        let attempts = 0;
+        const history = [];
+
+        function generateNumber() {
+            const digits = [];
+            while (digits.length < 4) {
+                const digit = Math.floor(Math.random() * 10);
+                if (!digits.includes(digit)) {
+                    digits.push(digit);
+                }
+            }
+            return digits;
+        }
+
+        function checkNumber(guess, real) {
+            let cows = 0, bulls = 0;
+            for (let i = 0; i < guess.length; i++) {
+                if (guess[i] === real[i]) {
+                    cows++;
+                } else if (real.includes(guess[i])) {
+                    bulls++;
+                }
+            }
+            return { cows, bulls };
+        }
+
+        document.getElementById('game-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const input = document.getElementById('guess-input');
+            const guess = input.value.split('').map(Number);
+            const messageEl = document.getElementById('message');
+            const historyEl = document.getElementById('history');
+
+            // Validate input
+            if (guess.length !== 4 || new Set(guess).size !== 4 || guess.some(isNaN)) {
+                messageEl.textContent = "Invalid input! Enter 4 unique digits.";
+                return;
+            }
+
+            // Check guess
+            attempts++;
+            const { cows, bulls } = checkNumber(guess, realNumber);
+
+            // Update history
+            history.push({ attempt: attempts, guess: input.value, cows, bulls });
+            const row = `<tr>
+                <td>${attempts}</td>
+                <td>${input.value}</td>
+                <td>${cows}</td>
+                <td>${bulls}</td>
+            </tr>`;
+            historyEl.innerHTML += row;
+
+            // Check win condition
+            if (cows === 4) {
+                messageEl.textContent = `You win! You guessed it in ${attempts} attempts.`;
+                input.disabled = true;
+                document.querySelector('button').disabled = true;
+                return;
+            } else {
+                messageEl.textContent = `Cows: ${cows}, Bulls: ${bulls}. Keep trying!`;
+            }
+
+            input.value = '';
+            input.focus();
+        });
+    </script>
+</body>
+</html>
