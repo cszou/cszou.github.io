@@ -9,6 +9,7 @@ const mySkills = [
     "SQL",
     "Git",
     "Jira",
+    "Linux",
 ];
 
 const skillDiv = document.createElement("div");

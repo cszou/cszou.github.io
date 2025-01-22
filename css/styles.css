@@ -28,11 +28,11 @@ html {
     box-sizing: inherit;
 }
 
-a {
+a.contact-info {
     color: #F0F0F0;
 }
 
-a:hover {
+a.contact-info:hover {
     text-decoration: none;
 }
 
@@ -136,32 +136,33 @@ header p {
     margin: 0;
 }
 
-/* .projects a {
-    background: #05B2DC;
-    color: white;
-    padding: 8px;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-} */
+.projects a {
+    color: #031A6B;
+}
 
 /* .projects a:hover {
-    background: #033860;
+    background: red;
 } */
 
+/* 
 .project-item {
     overflow: hidden;
-}
+} */
 
-.project-item h3 {
+/* .project-item h3 {
     margin-top: 0;
-}
+} */
 
 /* ------------------- work experience ------------------- */
 .work {
     color: #F0F0F0;
     background: #05B2DC;
     margin: 0;
+}
+
+p.job-title {
+    font-style: normal;
+    width: fit-content;
 }
 
 /* ------------------- contact ------------------- */
@@ -190,7 +191,7 @@ footer {
         text-align: center;
     }
 
-    .project-item {
+    /* .project-item {
         display: grid;
         grid-template-columns: 1fr 2fr;
         justify-content: center;
@@ -198,10 +199,10 @@ footer {
 
     .project-item img {
         margin-right: 20px;
-    }
+    } */
 
     .work-item {
-        display: grid;
+        /* display: grid; */
         grid-template-columns: 3fr 5fr;
         grid-template-rows: auto;
         column-gap: 10px;
