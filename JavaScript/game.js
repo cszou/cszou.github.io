@@ -30,11 +30,11 @@ function resetGame() {
     realNumber = generateNumber();
     attempts = 0;
     history.length = 0; // Clear history
-    document.getElementById('history').innerHTML = ''; // Clear table
+    document.getElementById('guess_history').innerHTML = ''; // Clear table
     document.getElementById('message').textContent = '';
     document.getElementById('guess-input').value = '';
     document.getElementById('guess-input').disabled = false;
-    const button = document.querySelector('button[type="submit"]');
+    const button = document.getElementById('button');
     button.textContent = 'Submit';
 }
 

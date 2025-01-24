@@ -73,7 +73,7 @@ h3 ~ p {
 }
 
 .divider > section{
-    border-bottom: 1px dashed red;
+    border-bottom: 1px dashed white;
     padding: 25px 0;
 }
 .divider > section:last-of-type {
@@ -128,16 +128,17 @@ header p {
     font-size: 20px;
 }
 
-.education h3 
+/* .education h3  */
 
 /* ------------------- projects ------------------- */
 .projects {
+    color: white;
     background-color: #087CA7;
     margin: 0;
 }
 
 .projects a {
-    color: #031A6B;
+    color: white;
 }
 
 /* .projects a:hover {
