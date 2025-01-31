@@ -1,17 +1,44 @@
 // Game state
-let realNumber = generateNumber();
 let attempts = 0;
 const history = [];
+let difficulty = 'easy';
+let num_length = 4;
+let realNumber = generateNumber();
 
 function generateNumber() {
+    if (difficulty === 'easy') {
+        num_length = 4;
+    }
+    else if (difficulty === 'medium') {
+        num_length = 5;
+    }
+    else if (difficulty === 'hard') {
+        num_length = 6;
+    }
     const digits = [];
-    while (digits.length < 4) {
+    while (digits.length < num_length) {
         const digit = Math.floor(Math.random() * 10);
         if (!digits.includes(digit)) {
             digits.push(digit);
         }
     }
+    // document.getElementById('real-number').textContent = digits.join('');
+    document.getElementById('hint').textContent = `Enter ${num_length} unique digits:`;
+    document.getElementById('guess-input').maxLength = num_length;
+    setTable();
     return digits;
+}
+
+
+function setTable() {
+    let text = `
+        <th>Attempt</th>
+        <th>Guess (${num_length} digits)</th>
+        <th style="color: green;">A</th>
+        <th style="color: red;">B</th>
+    `;
+    tableHeader = document.getElementById('table-row');
+    tableHeader.innerHTML = text;
 }
 
 function checkNumber(guess, real) {
@@ -40,7 +67,6 @@ function resetGame() {
 
 document.getElementById('game-form').addEventListener('submit', function (e) {
     e.preventDefault();
-
     const input = document.getElementById('guess-input');
     const button = document.getElementById('button');
     const game_message = document.getElementById('message');
@@ -54,8 +80,8 @@ document.getElementById('game-form').addEventListener('submit', function (e) {
     const guess = input.value.split('').map(Number);
 
     // Validate input
-    if (guess.length !== 4 || new Set(guess).size !== 4 || guess.some(isNaN)) {
-        game_message.textContent = `Invalid input! Enter 4 unique digits.`;
+    if (guess.length !== num_length || new Set(guess).size !== num_length || guess.some(isNaN)) {
+        game_message.textContent = `Invalid input! Enter ${num_length} unique digits.`;
         input.value = '';
         return;
     }
@@ -72,10 +98,11 @@ document.getElementById('game-form').addEventListener('submit', function (e) {
         <td>${a}</td>
         <td>${b}</td>
     </tr>`;
-    game_history.innerHTML += row;
+    var newRow = game_history.insertRow(0);
+    newRow.innerHTML = row;
 
     // Check win condition
-    if (a === 4) {
+    if (a === num_length) {
         game_message.innerHTML = `You win! You guessed it in ${attempts} attempts.`;
         input.disabled = true;
         button.textContent = 'Restart';
@@ -86,4 +113,9 @@ document.getElementById('game-form').addEventListener('submit', function (e) {
 
     input.value = '';
     input.focus();
+});
+
+document.getElementById('difficult-level').addEventListener('change', function (e) {
+    difficulty = e.target.value;
+    resetGame();
 });

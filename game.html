@@ -9,17 +9,25 @@
 </head>
 <body>
     <div class="container">
+        <label for="difficult-level">Select a difficult-level:</label>
+        <select id="difficult-level">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <!-- <p id="test">not called</p> -->
+        <!-- <p id="real-number">XXXX</p> -->
         <h1 style="font-size: 25px;">Guess the Number</h1>
         <form id="game-form">
-            <label for="guess-input">Enter 4 unique digits:</label><br>
+            <label for="guess-input" id="hint">Enter 4 unique digits:</label><br>
             <input type="text" id="guess-input" maxlength="4" inputmode="numeric" autofocus><br>
             <button id="button" type="submit">Submit</button>
         </form>
         <p id="message"></p>
-        <h2>Guess History:</h2>
-        <table>
-            <thead>
-                <tr>
+        <h2 id="table-title">Guess History:</h2>
+        <table id="guess-history">
+            <thead id="table-head">
+                <tr id="table-row">
                     <th>Attempt</th>
                     <th>Guess</th>
                     <th style="color: green;">A</th>
